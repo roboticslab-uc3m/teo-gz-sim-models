@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+<model name='TEO_root'>
+  <link name='RootWaist_links'>
+    <pose>0 0 0 0 -0 0</pose>
+    <inertial>
+      <pose>-0.010985 -0.000323 0.033148 0 -0 0</pose>
+      <mass>2.5</mass>
+      <inertia>
+        <ixx>0.038530767</ixx>
+        <ixy>-0.000000135</ixy>
+        <ixz>0.000238121</ixz>
+        <iyy>0.017354343</iyy>
+        <iyz>-4.8e-10</iyz>
+        <izz>0.053231634</izz>
+      </inertia>
+    </inertial>
+    <visual name='RootWaist_links_visual'>
+      <geometry>
+        <mesh>
+          <uri>model://teo/meshes/visual/RootWaist_links.dae</uri>
+        </mesh>
+      </geometry>
+      <material>
+        <ambient>0 0 0 1</ambient>
+        <diffuse>0 0 0 1</diffuse>
+        <specular>0 0 0 1</specular>
+      </material>
+    </visual>
+    <collision name='RootWaist_links_collision'>
+      <geometry>
+        <mesh>
+          <uri>model://teo/meshes/collision/RootWaist_links.stl</uri>
+        </mesh>
+      </geometry>
+    </collision>
+  </link>
+</model>
+</sdf>

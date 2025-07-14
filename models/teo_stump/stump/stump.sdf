@@ -1,0 +1,41 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='TEO_stump'>
+    <link name='Stump_link'>
+      <pose>0 0 0 -1.5708 0 0</pose>
+      <inertial>
+        <pose>-0.0000 -0.0000 -0.0 0 -0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.005330647</ixx>
+          <ixy>0.000000128</ixy>
+          <ixz>0.000100487</ixz>
+          <iyy>0.005345282</iyy>
+          <iyz>-0.00000807</iyz>
+          <izz>0.000882489</izz>
+        </inertia>
+      </inertial>
+      <visual name='Stump_visual'>
+        <pose>-0.025 -0.0 -0.07 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://teo_stump/meshes/Stump.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='Stump_collision'>
+        <pose>-0.025 -0.0 -0.075 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://teo_stump/meshes/Stump.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

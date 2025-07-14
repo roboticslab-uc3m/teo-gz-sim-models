@@ -1,0 +1,516 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='TEO_leftLacqueyFetch'>
+    <!-- Base: Wrist (muñeca + palma) -->
+    <link name='LeftWrist_link'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000050 -0.000055 -0.107329 0 -0 0</pose>
+        <mass>0.358</mass>
+        <inertia>
+          <ixx>0.0033558744</ixx>
+          <ixy>-0.000000324</ixy>
+          <ixz>0.0000088739</ixz>
+          <iyy>0.0031520281</iyy>
+          <iyz>0.0000036082</iyz>
+          <izz>0.0010088020</izz>
+        </inertia>
+      </inertial>
+      <visual name='LeftWrist_visual'>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/visual/Wrist.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='LeftWrist_collision'>
+        <pose>0.0 0.0 0.0 1.57079632679 0.0 0.0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/collision/Wrist.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1000000</kp>
+              <kd>100</kd>
+              <max_vel>0.001</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+
+    <!-- Dedo pulgar (thumb): falange proximal (00) -->
+    <link name='LeftThumbProximal_link'>
+      <pose>0.027472302 0 -0.164588951 0 -0 0</pose>
+      <inertial>
+        <pose>0.012547 0.000009 -0.020977 0 -0 0</pose>
+        <mass>0.018092</mass>
+        <inertia>
+          <ixx>0.0000042540336</ixx>
+          <ixy>-0.000000000003</ixy>
+          <ixz>0.0000016664918</ixz>
+          <iyy>0.0000051152263</iyy>
+          <iyz>-0.000000000012</iyz>
+          <izz>0.0000014691909</izz>
+        </inertia>
+      </inertial>
+      <visual name='LeftThumbProximal_visual'>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/visual/PhalangeProximal.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='LeftThumbProximal_collision'>
+        <pose>0.0 0.0 0.0 1.57079632679 0.0 -3.14159265359</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/collision/PhalangeProximal.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>2</max_contacts>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1000000</kp>
+              <kd>100</kd>
+              <max_vel>0.001</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+
+    <joint name='LeftThumbProximal' type='revolute'>
+      <parent>TEO_leftLacqueyFetch::LeftWrist_link</parent>
+      <child>TEO_leftLacqueyFetch::LeftThumbProximal_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>0.174533</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <!-- Dedo pulgar (thumb): falange distal (00) -->
+    <link name='LeftThumbDistal_link'>
+      <pose>0.054472302 0 -0.211588951 0 -0 0</pose>
+      <inertial>
+        <pose>0.006817 0 -0.017343 0 -0 0</pose>
+        <mass>0.01234</mass>
+        <inertia>
+          <ixx>0.000002852</ixx>
+          <ixy>0.000000000</ixy>
+          <ixz>0.000000239</ixz>
+          <iyy>0.000003003</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.000000357</izz>
+        </inertia>
+      </inertial>
+      <visual name='LeftThumbDistal_visual'>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/visual/PhalangeDistal.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='LeftThumbDistal_collision'>
+        <pose>0.0 0.0 0.0 1.57079632679 0.0 -3.14159265359</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/collision/PhalangeDistal.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>2</max_contacts>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1000000</kp>
+              <kd>100</kd>
+              <max_vel>0.001</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint name='LeftThumbDistal' type='revolute'>
+      <parent>TEO_leftLacqueyFetch::LeftThumbProximal_link</parent>
+      <child>TEO_leftLacqueyFetch::LeftThumbDistal_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.872665</lower>
+          <upper>0.174533</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <!-- Dedo indice: falange proximal (01) -->
+    <link name='ExternalLeftFingerProximal_link'>
+      <pose>-0.02852741 0.02010339 -0.164409358 0 0 -3.14159265359</pose>
+      <inertial>
+        <pose>0.012547 0.000009 -0.020977 0 -0 0</pose>
+        <mass>0.018092</mass>
+        <inertia>
+          <ixx>0.0000042540336</ixx>
+          <ixy>-0.000000000003</ixy>
+          <ixz>0.0000016664918</ixz>
+          <iyy>0.0000051152263</iyy>
+          <iyz>-0.000000000012</iyz>
+          <izz>0.0000014691909</izz>
+        </inertia>
+      </inertial>
+      <visual name='ExternalLeftFingerProximal_visual'>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/visual/PhalangeProximal.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='ExternalLeftFingerProximal_collision'>
+        <pose>0.0 0.0 0.0 1.57079632679 0.0 -3.14159265359</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/collision/PhalangeProximal.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>2</max_contacts>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1000000</kp>
+              <kd>100</kd>
+              <max_vel>0.001</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+
+    <joint name='ExternalLeftFingerProximal' type='revolute'>
+      <parent>TEO_leftLacqueyFetch::LeftWrist_link</parent>
+      <child>TEO_leftLacqueyFetch::ExternalLeftFingerProximal_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>0.174533</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <!-- Dedo indice: falange distal (01) -->
+    <link name='ExternalLeftFingerDistal_link'>
+      <pose>-0.05552741 0.02010339 -0.211409358 0 -0 -3.14159265359</pose>
+      <inertial>
+        <pose>0.006817 0 -0.017343 0 -0 0</pose>
+        <mass>0.01234</mass>
+        <inertia>
+          <ixx>0.000002852</ixx>
+          <ixy>0.000000000</ixy>
+          <ixz>0.000000239</ixz>
+          <iyy>0.000003003</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.000000357</izz>
+        </inertia>
+      </inertial>
+      <visual name='ExternalLeftFingerDistal_visual'>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/visual/PhalangeDistal.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='ExternalLeftFingerDistal_collision'>
+        <pose>0.0 0.0 0.0 1.57079632679 0.0 -3.14159265359</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/collision/PhalangeDistal.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>2</max_contacts>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1000000</kp>
+              <kd>100</kd>
+              <max_vel>0.001</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint name='ExternalLeftFingerDistal' type='revolute'>
+      <parent>TEO_leftLacqueyFetch::ExternalLeftFingerProximal_link</parent>
+      <child>TEO_leftLacqueyFetch::ExternalLeftFingerDistal_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.872665</lower>
+          <upper>0.174533</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <!-- Dedo medio: falange proximal (02) -->
+    <link name='InternalLeftFingerProximal_link'>
+      <pose>-0.02852741 -0.02010339 -0.164409358 0 0 -3.14159265359</pose>
+      <inertial>
+        <pose>0.012547 0.000009 -0.020977 0 -0 0</pose>
+        <mass>0.018092</mass>
+        <inertia>
+          <ixx>0.0000042540336</ixx>
+          <ixy>-0.000000000003</ixy>
+          <ixz>0.0000016664918</ixz>
+          <iyy>0.0000051152263</iyy>
+          <iyz>-0.000000000012</iyz>
+          <izz>0.0000014691909</izz>
+        </inertia>
+      </inertial>
+      <visual name='InternalLeftFingerProximal_visual'>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/visual/PhalangeProximal.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='InternalLeftFingerProximal_collision'>
+        <pose>0.0 0.0 0.0 1.57079632679 0.0 -3.14159265359</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/collision/PhalangeProximal.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>2</max_contacts>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1000000</kp>
+              <kd>100</kd>
+              <max_vel>0.001</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+
+    <joint name='InternalLeftFingerProximal' type='revolute'>
+      <parent>TEO_leftLacqueyFetch::LeftWrist_link</parent>
+      <child>TEO_leftLacqueyFetch::InternalLeftFingerProximal_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>0.174533</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <!-- Dedo medio: falange distal (01) -->
+    <link name='InternalLeftFingerDistal_link'>
+      <pose>-0.05552741 -0.02010339 -0.211409358 0 -0 -3.14159265359</pose>
+      <inertial>
+        <pose>0.006817 0 -0.017343 0 -0 0</pose>
+        <mass>0.01234</mass>
+        <inertia>
+          <ixx>0.000002852</ixx>
+          <ixy>0.000000000</ixy>
+          <ixz>0.000000239</ixz>
+          <iyy>0.000003003</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.000000357</izz>
+        </inertia>
+      </inertial>
+      <visual name='InternalLeftFingerDistal_visual'>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/visual/PhalangeDistal.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='InternalLeftFingerDistal_collision'>
+        <pose>0.0 0.0 0.0 1.57079632679 0.0 -3.14159265359</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo_lacqueyFetch/meshes/collision/PhalangeDistal.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>2</max_contacts>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1000000</kp>
+              <kd>100</kd>
+              <max_vel>0.001</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <joint name='InternalLeftFingerDistal' type='revolute'>
+      <parent>TEO_leftLacqueyFetch::InternalLeftFingerProximal_link</parent>
+      <child>TEO_leftLacqueyFetch::InternalLeftFingerDistal_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-0.872665</lower>
+          <upper>0.174533</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <plugin name='controlboard_leftLacqueyFetch_thumb' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>model://teo_lacqueyFetch/conf/gazebo_teo_leftLacqueyFetch_thumb.ini</yarpConfigurationFile>
+    </plugin>
+
+    <plugin name='controlboard_leftLacqueyFetch_externalFinger' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>model://teo_lacqueyFetch/conf/gazebo_teo_leftLacqueyFetch_externalFinger.ini</yarpConfigurationFile>
+    </plugin>
+
+    <plugin name='controlboard_leftLacqueyFetch_internalFinger' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>model://teo_lacqueyFetch/conf/gazebo_teo_leftLacqueyFetch_internalFinger.ini</yarpConfigurationFile>
+    </plugin>
+
+  </model>
+</sdf>

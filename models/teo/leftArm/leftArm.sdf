@@ -1,0 +1,354 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='TEO_leftArm'>
+
+    <link name='FrontalLeftShoulder_link_adapter'/>
+
+    <link name='FrontalLeftShoulder_link'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.002272 0.056186 0.008165 0 -0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.004226791</ixx>
+          <ixy>-0.0000855</ixy>
+          <ixz>-0.0000117</ixz>
+          <iyy>0.00212734</iyy>
+          <iyz>0.000280493</iyz>
+          <izz>0.00409322</izz>
+        </inertia>
+      </inertial>
+      <visual name='FrontalLeftShoulder_visual'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/visual/FrontalLeftShoulder.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='FrontalLeftShoulder_collision'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/collision/FrontalLeftShoulder.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name='FrontalLeftShoulder' type='revolute'>
+      <parent>FrontalLeftShoulder_link_adapter</parent>
+      <child>FrontalLeftShoulder_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.69</lower>
+          <upper>1.98</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='SagittalLeftShoulder_link'>
+      <pose>0 0.084 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.008047 0.004937 -0.027619 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.001610921</ixx>
+          <ixy>0.000069</ixy>
+          <ixz>-0.000214885</ixz>
+          <iyy>0.002187768</iyy>
+          <iyz>-0.000163004</iyz>
+          <izz>0.001173531</izz>
+        </inertia>
+      </inertial>
+      <visual name='SagittalLeftShoulder_visual'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/visual/SagittalLeftShoulder.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='SagittalLeftShoulder_collision'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/collision/SagittalLeftShoulder.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name='SagittalLeftShoulder' type='revolute'>
+      <parent>FrontalLeftShoulder_link</parent>
+      <child>SagittalLeftShoulder_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.42</lower>
+          <upper>1.34</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='AxialLeftShoulder_link'>
+      <pose>0 0.084 -0.329 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000172 0.000249 0.100649 0 -0 0</pose>
+        <!--<mass>1</mass>
+        <inertia>
+          <ixx>0.006925108</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.006741634</iyy>
+          <iyz>0.0000397</iyz>
+          <izz>0.000611796</izz>
+        </inertia>-->
+      </inertial>
+      <visual name='AxialLeftShoulder_visual'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/visual/AxialLeftShoulder.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='AxialLeftShoulder_collision'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/collision/AxialLeftShoulder.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name='AxialLeftShoulder' type='revolute'>
+      <parent>SagittalLeftShoulder_link</parent>
+      <child>AxialLeftShoulder_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.9</lower>
+          <upper>1.47</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='FrontalLeftElbow_link'>
+      <pose>0 0.084 -0.329 0 -0 0</pose>
+      <inertial>
+        <pose>0.000287 -0.000116 -0.053185 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.002590029</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00262307</iyy>
+          <iyz>0</iyz>
+          <izz>0.000446024</izz>
+        </inertia>
+      </inertial>
+      <visual name='FrontalLeftElbow_visual'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/visual/FrontalLeftElbow.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='FrontalLeftElbow_collision'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/collision/FrontalLeftElbow.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name='FrontalLeftElbow' type='revolute'>
+      <parent>AxialLeftShoulder_link</parent>
+      <child>FrontalLeftElbow_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.76</lower>
+          <upper>1.69</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='AxialLeftWrist_link'>
+      <pose>0 0.084 -0.531 0 -0 0</pose>
+      <inertial>
+        <pose>-0.001151 0.000603 0.02464 0 -0 0</pose>
+        <mass>0.63149</mass>
+        <!--<inertia>
+          <ixx>0.000701463</ixx>
+          <ixy>-0.0000105</ixy>
+          <ixz>-0.0000109</ixz>
+          <iyy>0.000612806</iyy>
+          <iyz>0.0000115</iyz>
+          <izz>0.000326949</izz>
+        </inertia>-->
+      </inertial>
+      <visual name='AxialLeftWrist_visual'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/visual/AxialLeftWrist.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='AxialLeftWrist_collision'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/collision/AxialLeftWrist.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name='AxialLeftWrist' type='revolute'>
+      <parent>FrontalLeftElbow_link</parent>
+      <child>AxialLeftWrist_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.77</lower>
+          <upper>1.33</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='FrontalLeftWrist_link'>
+      <pose>0 0.084 -0.531 0 -0 0</pose>
+      <inertial>
+        <pose>-0.002314 0.00007 -0.108635 0 -0 0</pose>
+        <mass>0.72</mass>
+        <inertia>
+          <ixx>0.005330647</ixx>
+          <ixy>0.000000128</ixy>
+          <ixz>0.000100487</ixz>
+          <iyy>0.005345282</iyy>
+          <iyz>-0.00000807</iyz>
+          <izz>0.000882489</izz>
+        </inertia>
+      </inertial>
+      <visual name='FrontalLeftWrist_visual'>
+        <pose>0 0 0 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo/meshes/visual/FrontalLeftWrist.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.655686 0.746667 1</specular>
+        </material>
+      </visual>
+      <collision name='FrontalLeftWrist_collision'>
+        <pose>0 0 0 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://teo/meshes/collision/FrontalLeftWrist.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name='FrontalLeftWrist' type='revolute'>
+      <parent>AxialLeftWrist_link</parent>
+      <child>FrontalLeftWrist_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.98</lower>
+          <upper>1.07</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='LeftSensorPlate_link'>
+      <pose>0 0.084 -0.63401 0 -0 0</pose>
+      <inertial>
+        <mass>0.001</mass> <!-- can't be zero! -->
+      </inertial>
+    </link>
+
+    <joint name='LeftSensorPlate' type='fixed'>
+      <parent>FrontalLeftWrist_link</parent>
+      <child>LeftSensorPlate_link</child>
+      <pose>0 0 0 0 3.141593 0</pose>
+      <sensor name="leftArm_ft" type="force_torque">
+        <always_on>true</always_on>
+        <update_rate>200</update_rate>
+        <force_torque>
+          <frame>sensor</frame>
+          <measure_direction>child_to_parent</measure_direction>
+        </force_torque>
+        <plugin name='leftArm_ft_plugin' filename='libgazebo_yarp_forcetorque.so'>
+          <yarpConfigurationFile>model://teo/conf/gazebo_teo_leftArm_ft.ini</yarpConfigurationFile>
+        </plugin>
+      </sensor>
+    </joint>
+
+    <plugin name='controlboard_leftArm' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>model://teo/conf/gazebo_teo_leftArm.ini</yarpConfigurationFile>
+    </plugin>
+
+    <plugin name='gzyarp::ControlBoard' filename='gz-sim-yarp-controlboard-system'>
+      <yarpConfigurationFile>model://teo/conf/gazebo_teo_leftArm.ini</yarpConfigurationFile>
+    </plugin>
+
+    <plugin name='gzyarp::ForceTorque' filename='gz-sim-yarp-forcetorque-system'>
+      <yarpConfigurationFile>model://teo/conf/gazebo_teo_leftArm_ft.ini</yarpConfigurationFile>
+    </plugin>
+
+  </model>
+</sdf>

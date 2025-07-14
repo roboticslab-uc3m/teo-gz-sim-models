@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='TEO_fixed'>
+
+    <include>
+      <uri>model://teo</uri>
+    </include>
+
+    <joint name="fixed_to_ground" type="fixed">
+      <parent>world</parent>
+      <child>TEO::RootWaist_links</child>
+    </joint>
+
+  </model>
+</sdf>

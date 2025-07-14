@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<robot name="teo_nws_ros2" portprefix="teoSim" build="0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <devices>
+        <device name="head_nws_ros2" type="controlBoard_nws_ros2">
+            <param name="node_name">${portprefix}_head</param>
+            <param name="topic_name">/${portprefix}/head/state</param>
+            <param name="msgs_name">/${portprefix}/head</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_head</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="leftArm_nws_ros2" type="controlBoard_nws_ros2">
+            <param name="node_name">${portprefix}_leftArm</param>
+            <param name="topic_name">/${portprefix}/leftArm/state</param>
+            <param name="msgs_name">/${portprefix}/leftArm</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_leftArm</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="rightArm_nws_ros2" type="controlBoard_nws_ros2">
+            <param name="node_name">${portprefix}_rightArm</param>
+            <param name="topic_name">/${portprefix}/rightArm/state</param>
+            <param name="msgs_name">/${portprefix}/rightArm</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_rightArm</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="trunk_nws_ros2" type="controlBoard_nws_ros2">
+            <param name="node_name">${portprefix}_trunk</param>
+            <param name="topic_name">/${portprefix}/trunk/state</param>
+            <param name="msgs_name">/${portprefix}/trunk</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_trunk</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="leftLeg_nws_ros2" type="controlBoard_nws_ros2">
+            <param name="node_name">${portprefix}_leftLeg</param>
+            <param name="topic_name">/${portprefix}/leftLeg/state</param>
+            <param name="msgs_name">/${portprefix}/leftLeg</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_leftLeg</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="rightLeg_nws_ros2" type="controlBoard_nws_ros2">
+            <param name="node_name">${portprefix}_rightLeg</param>
+            <param name="topic_name">/${portprefix}/rightLeg/state</param>
+            <param name="msgs_name">/${portprefix}/rightLeg</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_rightLeg</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <!-- <device name="depthcamera_nws_ros2" type="rgbdSensor_nws_ros2">
+            <param name="node_name">${portprefix}_camera</param>
+            <param name="depth_topic_name">/${portprefix}/depth</param>
+            <param name="color_topic_name">/${portprefix}/color</param>
+            <param name="depth_frame_id">0</param>
+            <param name="color_frame_id">0</param>
+            <param name="period">0.02</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">depthcamera</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device> -->
+        <device name="imu_nws_ros2" type="imu_nws_ros2">
+            <param name="node_name">${portprefix}_imu</param>
+            <param name="topic_name">/${portprefix}/imu</param>
+            <param name="period">0.005</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">imu</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="rightLeg_ft_nws_ros2" type="wrenchStamped_nws_ros2">
+            <param name="node_name">${portprefix}_rightLeg_ft</param>
+            <param name="topic_name">/${portprefix}/rightLeg_ft</param>
+            <param name="period">0.005</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">forceTorque_rightLeg</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="leftLeg_ft_nws_ros2" type="wrenchStamped_nws_ros2">
+            <param name="node_name">${portprefix}_leftLeg_ft</param>
+            <param name="topic_name">/${portprefix}/leftLeg_ft</param>
+            <param name="period">0.005</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">forceTorque_leftLeg</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="rightArm_ft_nws_ros2" type="wrenchStamped_nws_ros2">
+            <param name="node_name">${portprefix}_rightArm_ft</param>
+            <param name="topic_name">/${portprefix}/rightArm_ft</param>
+            <param name="period">0.005</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">forceTorque_rightArm</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="leftArm_ft_nws_ros2" type="wrenchStamped_nws_ros2">
+            <param name="node_name">${portprefix}_leftArm_ft</param>
+            <param name="topic_name">/${portprefix}/leftArm_ft</param>
+            <param name="period">0.005</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">forceTorque_leftArm</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+    </devices>
+</robot>

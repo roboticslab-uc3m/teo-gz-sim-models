@@ -1,0 +1,150 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='TEO_head'>
+
+    <link name='AxialNeck_link_adapter'/>
+
+    <link name='AxialNeck_link'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.000302 0.000193 -0.0452 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.000939063</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000939063</iyy>
+          <iyz>0</iyz>
+          <izz>0.000528125</izz>
+        </inertia>
+      </inertial>
+      <visual name='AxialNeck_visual'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/visual/AxialNeck.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.633726 0.65568602 0.74666703 1</specular>
+        </material>
+      </visual>
+      <collision name='AxialNeck_collision'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/collision/AxialNeck.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name='AxialNeck' type='revolute'>
+      <parent>AxialNeck_link_adapter</parent>
+      <child>AxialNeck_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.22</lower>
+          <upper>1.22</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='FrontalNeck_link'>
+      <pose>0 0 0.0325 0 -0 0</pose>
+      <inertial>
+        <pose>-0.002729 -0.000086 0.067027 0 -0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.007599322</ixx>
+          <ixy>5.83e-09</ixy>
+          <ixz>0.0000658</ixz>
+          <iyy>0.008325273</iyy>
+          <iyz>-7.43e-09</iyz>
+          <izz>0.011403464</izz>
+        </inertia>
+      </inertial>
+      <visual name='FrontalNeck_visual'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/visual/FrontalNeck.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <collision name='FrontalNeck_collision'>
+        <geometry>
+          <mesh>
+            <uri>model://teo/meshes/collision/FrontalNeck.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <sensor name='xtion_rgbd' type='depth'>
+        <pose>0 0 0 0 -0 0</pose>
+        <camera>
+          <horizontal_fov>1.01</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.8</near>
+            <far>3.5</far>
+          </clip>
+          <lens>
+            <intrinsics>
+              <fx>525</fx>
+              <fy>525</fy>
+              <cx>319.5</cx>
+              <cy>239.5</cy>
+            </intrinsics>
+          </lens>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>1</visualize>
+        <!-- <plugin name='xtion_rgbd_plugin' filename='libgazebo_yarp_depthCamera.so'>
+          <yarpConfigurationFile>model://teo/conf/gazebo_teo_rgbd.ini</yarpConfigurationFile>
+        </plugin> -->
+      </sensor>
+    </link>
+
+    <joint name='FrontalNeck' type='revolute'>
+      <parent>AxialNeck_link</parent>
+      <child>FrontalNeck_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.51</lower>
+          <upper>0.15</upper>
+        </limit>
+        <dynamics>
+          <damping>0.001</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <plugin name='controlboard_head' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>model://teo/conf/gazebo_teo_head.ini</yarpConfigurationFile>
+    </plugin>
+
+    <plugin name='gzyarp::ControlBoard' filename='gz-sim-yarp-controlboard-system'>
+      <yarpConfigurationFile>model://teo/conf/gazebo_teo_head.ini</yarpConfigurationFile>
+    </plugin>
+
+    <!-- <plugin name='gzyarp::DepthCamera' filename='gz-sim-yarp-depthcamera-system'>
+      <yarpConfigurationFile>model://teo/conf/gazebo_teo_rgbd.ini</yarpConfigurationFile>
+    </plugin> -->
+
+  </model>
+</sdf>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<robot name="teo_nws_yarp" portprefix="/teoSim" build="0" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <devices>
+        <device name="head_nws_yarp" type="controlBoard_nws_yarp">
+            <param name="name">${portprefix}/head</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_head</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="leftArm_nws_yarp" type="controlBoard_nws_yarp">
+            <param name="name">${portprefix}/leftArm</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_leftArm</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="rightArm_nws_yarp" type="controlBoard_nws_yarp">
+            <param name="name">${portprefix}/rightArm</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_rightArm</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="trunk_nws_yarp" type="controlBoard_nws_yarp">
+            <param name="name">${portprefix}/trunk</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_trunk</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="leftLeg_nws_yarp" type="controlBoard_nws_yarp">
+            <param name="name">${portprefix}/leftLeg</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_leftLeg</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="rightLeg_nws_yarp" type="controlBoard_nws_yarp">
+            <param name="name">${portprefix}/rightLeg</param>
+            <param name="period">0.01</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">controlboard_rightLeg</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <!-- <device name="depthcamera_nws_yarp" type="rgbdSensor_nws_yarp">
+            <param name="name">${portprefix}/camera</param>
+            <param name="period">0.02</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">depthcamera</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device> -->
+        <device name="imu_nws_yarp" type="multipleanalogsensorsserver">
+            <param name="name">${portprefix}/imu</param>
+            <param name="period">5</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">imu</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
+        <device name="forceTorque_remapper" type="multipleanalogsensorsremapper">
+            <param name="SixAxisForceTorqueSensorsNames">
+                (rightLeg_ft leftLeg_ft rightArm_ft leftArm_ft)
+            </param>
+            <action phase="startup" level="5" type="attach">
+                <paramlist name="networks">
+                    <elem name="rightLeg_ft">forceTorque_rightLeg</elem>
+                    <elem name="leftLeg_ft">forceTorque_leftLeg</elem>
+                    <elem name="rightArm_ft">forceTorque_rightArm</elem>
+                    <elem name="leftArm_ft">forceTorque_leftArm</elem>
+                </paramlist>
+            </action>
+            <action phase="shutdown" level="20" type="detach" />
+        </device>
+        <device name="forceTorque_nws_yarp" type="multipleanalogsensorsserver">
+            <param name="name">${portprefix}/forceTorque</param>
+            <param name="period">5</param>
+            <action phase="startup" level="10" type="attach">
+                <param name="device">forceTorque_remapper</param>
+            </action>
+            <action phase="shutdown" level="15" type="detach" />
+        </device>
+    </devices>
+</robot>
