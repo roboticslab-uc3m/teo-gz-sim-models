@@ -92,9 +92,6 @@
         <pose>0 0 0.05 0 3.14159 0</pose>
         <always_on>true</always_on>
         <update_rate>200</update_rate>
-        <plugin name='waist_imu_plugin' filename='libgazebo_yarp_imu.so'>
-          <yarpConfigurationFile>model://teo/conf/gazebo_teo_imu.ini</yarpConfigurationFile>
-        </plugin>
       </sensor>
     </link>
 
@@ -113,10 +110,6 @@
         </dynamics>
       </axis>
     </joint>
-
-    <plugin name='controlboard_trunk' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://teo/conf/gazebo_teo_trunk.ini</yarpConfigurationFile>
-    </plugin>
 
     <plugin name='gzyarp::ControlBoard' filename='gz-sim-yarp-controlboard-system'>
       <yarpConfigurationFile>model://teo/conf/gazebo_teo_trunk.ini</yarpConfigurationFile>

@@ -332,15 +332,8 @@
           <frame>sensor</frame>
           <measure_direction>child_to_parent</measure_direction>
         </force_torque>
-        <plugin name='leftArm_ft_plugin' filename='libgazebo_yarp_forcetorque.so'>
-          <yarpConfigurationFile>model://teo/conf/gazebo_teo_leftArm_ft.ini</yarpConfigurationFile>
-        </plugin>
       </sensor>
     </joint>
-
-    <plugin name='controlboard_leftArm' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://teo/conf/gazebo_teo_leftArm.ini</yarpConfigurationFile>
-    </plugin>
 
     <plugin name='gzyarp::ControlBoard' filename='gz-sim-yarp-controlboard-system'>
       <yarpConfigurationFile>model://teo/conf/gazebo_teo_leftArm.ini</yarpConfigurationFile>

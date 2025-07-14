@@ -83,14 +83,6 @@
     <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"/>
     <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
 
-    <plugin name='robotinterface_teo_yarp' filename='libgazebo_yarp_robotinterface.so'>
-      <yarpRobotInterfaceConfigurationFile>teo/conf.sdf/teo_nws_yarp.xml</yarpRobotInterfaceConfigurationFile>
-    </plugin>
-
-    <plugin name='robotinterface_teo_ros2' filename='libgazebo_yarp_robotinterface.so'>
-      <yarpRobotInterfaceConfigurationFile>teo/conf.sdf/teo_nws_ros2.xml</yarpRobotInterfaceConfigurationFile>
-    </plugin>
-
     <plugin name='gzyarp::RobotInterface' filename='gz-sim-yarp-robotinterface-system'>
       <yarpRobotInterfaceConfigurationFile>model://teo/conf/teo_nws_yarp.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
@@ -98,8 +90,6 @@
     <!-- <plugin name='gzyarp::RobotInterface' filename='gz-sim-yarp-robotinterface-system'>
       <yarpRobotInterfaceConfigurationFile>model://teo/conf/teo_nws_ros2.xml</yarpRobotInterfaceConfigurationFile>
     </plugin> -->
-
-    <plugin name='externalwrench' filename='libgazebo_yarp_externalwrench.so' />
 
   </model>
 </sdf>
