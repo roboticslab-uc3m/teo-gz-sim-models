@@ -88,7 +88,7 @@
           </mesh>
         </geometry>
       </collision>
-      <sensor name='xtion_rgbd' type='depth'>
+      <sensor name='xtion_rgbd' type='rgbd_camera'>
         <pose>0 0 0 0 -0 0</pose>
         <camera>
           <horizontal_fov>1.01</horizontal_fov>
@@ -97,7 +97,7 @@
             <height>480</height>
           </image>
           <clip>
-            <near>0.8</near>
+            <near>0.2</near>
             <far>3.5</far>
           </clip>
           <lens>
@@ -135,9 +135,9 @@
       <yarpConfigurationFile>model://teo/conf/gazebo_teo_head.ini</yarpConfigurationFile>
     </plugin>
 
-    <!-- <plugin name='gzyarp::DepthCamera' filename='gz-sim-yarp-depthcamera-system'>
+    <plugin name='gzyarp::DepthCamera' filename='gz-sim-yarp-depthcamera-system'>
       <yarpConfigurationFile>model://teo/conf/gazebo_teo_rgbd.ini</yarpConfigurationFile>
-    </plugin> -->
+    </plugin>
 
   </model>
 </sdf>

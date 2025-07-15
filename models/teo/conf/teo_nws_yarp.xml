@@ -51,14 +51,14 @@
             </action>
             <action phase="shutdown" level="5" type="detach" />
         </device>
-        <!-- <device name="depthcamera_nws_yarp" type="rgbdSensor_nws_yarp">
+        <device name="depthcamera_nws_yarp" type="rgbdSensor_nws_yarp">
             <param name="name">${portprefix}/camera</param>
             <param name="period">0.02</param>
             <action phase="startup" level="5" type="attach">
                 <param name="device">depthcamera</param>
             </action>
             <action phase="shutdown" level="5" type="detach" />
-        </device> -->
+        </device>
         <device name="imu_nws_yarp" type="multipleanalogsensorsserver">
             <param name="name">${portprefix}/imu</param>
             <param name="period">5</param>

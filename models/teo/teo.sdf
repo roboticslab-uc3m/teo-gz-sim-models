@@ -80,8 +80,11 @@
       <child>AxialLeftHip_link_adapter</child>
     </joint>
 
-    <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"/>
-    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
+    <!-- <plugin name="gz::sim::systems::Physics" filename="gz-sim-physics-system" /> -->
+    <plugin name="gz::sim::systems::SceneBroadcaster" filename="gz-sim-scene-broadcaster-system" />
+    <plugin name="gz::sim::systems::Sensors" filename="gz-sim-sensors-system" />
+    <plugin name="gz::sim::systems::ForceTorque" filename="gz-sim-forcetorque-system" />
+    <plugin name="gz::sim::systems::Imu" filename="gz-sim-imu-system" />
 
     <plugin name='gzyarp::RobotInterface' filename='gz-sim-yarp-robotinterface-system'>
       <yarpRobotInterfaceConfigurationFile>model://teo/conf/teo_nws_yarp.xml</yarpRobotInterfaceConfigurationFile>
