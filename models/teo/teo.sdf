@@ -90,9 +90,9 @@
       <yarpRobotInterfaceConfigurationFile>model://teo/conf/teo_nws_yarp.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
 
-    <!-- <plugin name='gzyarp::RobotInterface' filename='gz-sim-yarp-robotinterface-system'>
+    <plugin name='gzyarp::RobotInterface' filename='gz-sim-yarp-robotinterface-system'>
       <yarpRobotInterfaceConfigurationFile>model://teo/conf/teo_nws_ros2.xml</yarpRobotInterfaceConfigurationFile>
-    </plugin> -->
+    </plugin>
 
   </model>
 </sdf>
