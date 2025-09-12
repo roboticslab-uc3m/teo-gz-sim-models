@@ -26,5 +26,6 @@ Installation instructions for installing from source can be found [here](doc/teo
 
 ## Similar and Related Projects
 
+- [robotology/gz-sim-yarp-plugins](https://github.com/robotology/gz-sim-yarp-plugins)
 - [roboticslab-uc3m/teo-gazebo-models](https://github.com/roboticslab-uc3m/teo-gazebo-models) (Gazebo classic)
 - [roboticslab-uc3m/teo-openrave-models](https://github.com/roboticslab-uc3m/teo-openrave-models)
