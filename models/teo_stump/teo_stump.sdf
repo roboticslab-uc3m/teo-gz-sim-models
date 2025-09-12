@@ -9,7 +9,7 @@
     <include>
       <name>TEO_rightStump</name>
       <pose>0 -0.3465 0.7222 0 -0 0</pose>
-      <uri>teo_stump/stump.sdf</uri>
+      <uri>model://teo_stump/stump.sdf</uri>
     </include>
 
     <joint name="RightStump" type="fixed">
@@ -20,7 +20,7 @@
     <include>
       <name>TEO_leftStump</name>
       <pose>0 0.3465 0.7222 0 -0 0</pose>
-      <uri>teo_stump/stump.sdf</uri>
+      <uri>model://teo_stump/stump.sdf</uri>
     </include>
 
     <joint name="LeftStump" type="fixed">

@@ -8,7 +8,7 @@
 
     <include merge="true">
       <pose>0 -0.34692 0.8122 0 -0 0</pose>
-      <uri>teo_lacqueyFetch/parts/rightLacqueyFetch.sdf</uri>
+      <uri>model://teo_lacqueyFetch/parts/rightLacqueyFetch.sdf</uri>
     </include>
 
     <joint name="RightWrist" type="fixed">
@@ -18,7 +18,7 @@
 
     <include merge="true">
       <pose>0 0.34692 0.8122 0 -0 0</pose>
-      <uri>teo_lacqueyFetch/parts/leftLacqueyFetch.sdf</uri>
+      <uri>model://teo_lacqueyFetch/parts/leftLacqueyFetch.sdf</uri>
     </include>
 
     <joint name="LeftWrist" type="fixed">

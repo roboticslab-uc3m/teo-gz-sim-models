@@ -4,8 +4,10 @@
 
     <pose>0 0 0.845 0 -0 0</pose>
 
+    <!-- ROOT -->
+
     <include merge="true">
-      <uri>teo/parts/root.sdf</uri>
+      <uri>model://teo/parts/root.sdf</uri>
     </include>
 
     <joint name="AxialTrunk_adapter" type="fixed">
@@ -17,14 +19,14 @@
 
     <include merge="true">
       <pose>0 0 0.1932 0 -0 0</pose>
-      <uri>teo/parts/trunk.sdf</uri>
+      <uri>model://teo/parts/trunk.sdf</uri>
     </include>
 
     <!-- HEAD -->
 
     <include merge="true">
       <pose>0 0 0.6282 0 -0 0</pose>
-      <uri>teo/parts/head.sdf</uri>
+      <uri>model://teo/parts/head.sdf</uri>
     </include>
 
     <joint name="AxialNeck_adapter" type="fixed">
@@ -36,7 +38,7 @@
 
     <include merge="true">
       <pose>0 -0.26292 0.4982 0 -0 0</pose>
-      <uri>teo/parts/rightArm.sdf</uri>
+      <uri>model://teo/parts/rightArm.sdf</uri>
     </include>
 
     <joint name="FrontalRightShoulder_adapter" type="fixed">
@@ -48,7 +50,7 @@
 
     <include merge="true">
       <pose>0 0.26292 0.4982 0 -0 0</pose>
-      <uri>teo/parts/leftArm.sdf</uri>
+      <uri>model://teo/parts/leftArm.sdf</uri>
     </include>
 
     <joint name="FrontalLeftShoulder_adapter" type="fixed">
@@ -60,7 +62,7 @@
 
     <include merge="true">
       <pose>0 -0.146 0 0 -0 0</pose>
-      <uri>teo/parts/rightLeg.sdf</uri>
+      <uri>model://teo/parts/rightLeg.sdf</uri>
     </include>
 
     <joint name="AxialRightHip_adapter" type="fixed">
@@ -72,7 +74,7 @@
 
     <include merge="true">
       <pose>0 0.146 0 0 -0 0</pose>
-      <uri>teo/parts/leftLeg.sdf</uri>
+      <uri>model://teo/parts/leftLeg.sdf</uri>
     </include>
 
     <joint name="AxialLeftHip_adapter" type="fixed">
