@@ -19,7 +19,7 @@
         <pose>-0.025 -0.0 -0.07 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://teo_stump/meshes/Stump.stl</uri>
+            <uri>model://teo_stump/Stump.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -32,7 +32,7 @@
         <pose>-0.025 -0.0 -0.075 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://teo_stump/meshes/Stump.stl</uri>
+            <uri>model://teo_stump/Stump.stl</uri>
           </mesh>
         </geometry>
       </collision>

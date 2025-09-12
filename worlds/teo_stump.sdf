@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <world name="default">
+
+    <light name="directional_light" type="directional">
+      <direction>-1 0 0</direction>
+      <pose>1 0 0 0 0 0</pose>
+    </light>
+
+    <include>
+      <uri>model://teo_stump</uri>
+    </include>
+
+  </world>
+</sdf>
