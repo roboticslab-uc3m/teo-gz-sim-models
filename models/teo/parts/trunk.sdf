@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version="1.7">
-  <model name="TEO">
+  <model name="TEO_trunk">
 
     <link name="AxialTrunk_link_adapter"/>
 
