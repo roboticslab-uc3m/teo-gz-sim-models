@@ -1,10 +1,10 @@
-<?xml version='1.0'?>
-<sdf version='1.7'>
-  <model name='TEO_rightArm'>
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="TEO_rightArm">
 
-    <link name='FrontalRightShoulder_link_adapter'/>
+    <link name="FrontalRightShoulder_link_adapter"/>
 
-    <link name='FrontalRightShoulder_link'>
+    <link name="FrontalRightShoulder_link">
       <pose>0 0 0 0 -0 0</pose>
       <inertial>
         <pose>-0.002267 -0.056164 0.008456 0 -0 0</pose>
@@ -18,7 +18,7 @@
           <izz>0.004093161</izz>
         </inertia>
       </inertial>
-      <visual name='FrontalRightShoulder_visual'>
+      <visual name="FrontalRightShoulder_visual">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/visual/FrontalRightShoulder.dae</uri>
@@ -30,7 +30,7 @@
           <specular>0.633726 0.655686 0.746667 1</specular>
         </material>
       </visual>
-      <collision name='FrontalRightShoulder_collision'>
+      <collision name="FrontalRightShoulder_collision">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/collision/FrontalRightShoulder.stl</uri>
@@ -39,7 +39,7 @@
       </collision>
     </link>
 
-    <joint name='FrontalRightShoulder' type='revolute'>
+    <joint name="FrontalRightShoulder" type="revolute">
       <parent>FrontalRightShoulder_link_adapter</parent>
       <child>FrontalRightShoulder_link</child>
       <axis>
@@ -55,7 +55,7 @@
       </axis>
     </joint>
 
-    <link name='SagittalRightShoulder_link'>
+    <link name="SagittalRightShoulder_link">
       <pose>0 -0.084 0 0 -0 0</pose>
       <inertial>
         <pose>-0.008472 -0.004826 -0.027321 0 -0 0</pose>
@@ -69,7 +69,7 @@
           <izz>0.001173533</izz>
         </inertia>
       </inertial>
-      <visual name='SagittalRightShoulder_visual'>
+      <visual name="SagittalRightShoulder_visual">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/visual/SagittalRightShoulder.dae</uri>
@@ -81,7 +81,7 @@
           <specular>0.633726 0.655686 0.746667 1</specular>
         </material>
       </visual>
-      <collision name='SagittalRightShoulder_collision'>
+      <collision name="SagittalRightShoulder_collision">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/collision/SagittalRightShoulder.stl</uri>
@@ -90,7 +90,7 @@
       </collision>
     </link>
 
-    <joint name='SagittalRightShoulder' type='revolute'>
+    <joint name="SagittalRightShoulder" type="revolute">
       <parent>FrontalRightShoulder_link</parent>
       <child>SagittalRightShoulder_link</child>
       <axis>
@@ -106,7 +106,7 @@
       </axis>
     </joint>
 
-    <link name='AxialRightShoulder_link'>
+    <link name="AxialRightShoulder_link">
       <pose>0 -0.084 -0.329 0 -0 0</pose>
       <inertial>
         <pose>0.000347 0.000245 0.107382 0 -0 0</pose>
@@ -120,7 +120,7 @@
           <izz>0.000611796</izz>
         </inertia>-->
       </inertial>
-      <visual name='AxialRightShoulder_visual'>
+      <visual name="AxialRightShoulder_visual">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/visual/AxialRightShoulder.dae</uri>
@@ -132,7 +132,7 @@
           <specular>0.633726 0.655686 0.746667 1</specular>
         </material>
       </visual>
-      <collision name='AxialRightShoulder_collision'>
+      <collision name="AxialRightShoulder_collision">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/collision/AxialRightShoulder.stl</uri>
@@ -141,7 +141,7 @@
       </collision>
     </link>
 
-    <joint name='AxialRightShoulder' type='revolute'>
+    <joint name="AxialRightShoulder" type="revolute">
       <parent>SagittalRightShoulder_link</parent>
       <child>AxialRightShoulder_link</child>
       <axis>
@@ -157,7 +157,7 @@
       </axis>
     </joint>
 
-    <link name='FrontalRightElbow_link'>
+    <link name="FrontalRightElbow_link">
       <pose>0 -0.084 -0.329 0 -0 0</pose>
       <inertial>
         <pose>0.000237 -0.00004 -0.04998 0 -0 0</pose>
@@ -171,7 +171,7 @@
           <izz>0.000446024</izz>
         </inertia>
       </inertial>
-      <visual name='FrontalRightElbow_visual'>
+      <visual name="FrontalRightElbow_visual">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/visual/FrontalRightElbow.dae</uri>
@@ -183,7 +183,7 @@
           <specular>0.633726 0.655686 0.746667 1</specular>
         </material>
       </visual>
-      <collision name='FrontalRightElbow_collision'>
+      <collision name="FrontalRightElbow_collision">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/collision/FrontalRightElbow.stl</uri>
@@ -192,7 +192,7 @@
       </collision>
     </link>
 
-    <joint name='FrontalRightElbow' type='revolute'>
+    <joint name="FrontalRightElbow" type="revolute">
       <parent>AxialRightShoulder_link</parent>
       <child>FrontalRightElbow_link</child>
       <axis>
@@ -208,7 +208,7 @@
       </axis>
     </joint>
 
-    <link name='AxialRightWrist_link'>
+    <link name="AxialRightWrist_link">
       <pose>0 -0.084 -0.531 0 -0 0</pose>
       <inertial>
         <pose>-0.001151 0.000603 0.02464 0 -0 0</pose>
@@ -222,7 +222,7 @@
           <izz>0.000326949</izz>
         </inertia>-->
       </inertial>
-      <visual name='AxialRightWrist_visual'>
+      <visual name="AxialRightWrist_visual">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/visual/AxialRightWrist.dae</uri>
@@ -234,7 +234,7 @@
           <specular>0.633726 0.655686 0.746667 1</specular>
         </material>
       </visual>
-      <collision name='AxialRightWrist_collision'>
+      <collision name="AxialRightWrist_collision">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/collision/AxialRightWrist.stl</uri>
@@ -243,7 +243,7 @@
       </collision>
     </link>
 
-    <joint name='AxialRightWrist' type='revolute'>
+    <joint name="AxialRightWrist" type="revolute">
       <parent>FrontalRightElbow_link</parent>
       <child>AxialRightWrist_link</child>
       <axis>
@@ -259,7 +259,7 @@
       </axis>
     </joint>
 
-    <link name='FrontalRightWrist_link'>
+    <link name="FrontalRightWrist_link">
       <pose>0 -0.084 -0.531 0 -0 0</pose>
       <inertial>
         <pose>-0.002314 0.00007 -0.108635 0 -0 0</pose>
@@ -273,7 +273,7 @@
           <izz>0.000883179</izz>
         </inertia>
       </inertial>
-      <visual name='FrontalRightWrist_visual'>
+      <visual name="FrontalRightWrist_visual">
         <pose>0 0 0 -1.5708 0 0</pose>
         <geometry>
           <mesh>
@@ -287,7 +287,7 @@
           <specular>0.633726 0.655686 0.746667 1</specular>
         </material>
       </visual>
-      <collision name='FrontalRightWrist_collision'>
+      <collision name="FrontalRightWrist_collision">
         <pose>0 0 0 -1.5708 0 0</pose>
         <geometry>
           <mesh>
@@ -298,7 +298,7 @@
       </collision>
     </link>
 
-    <joint name='FrontalRightWrist' type='revolute'>
+    <joint name="FrontalRightWrist" type="revolute">
       <parent>AxialRightWrist_link</parent>
       <child>FrontalRightWrist_link</child>
       <axis>
@@ -314,14 +314,14 @@
       </axis>
     </joint>
 
-    <link name='RightSensorPlate_link'>
+    <link name="RightSensorPlate_link">
       <pose>0 -0.084 -0.63401 0 -0 0</pose>
       <inertial>
-        <mass>0.001</mass> <!-- can't be zero! -->
+        <mass>0.001</mass> <!-- can"t be zero! -->
       </inertial>
     </link>
 
-    <joint name='RightSensorPlate' type='fixed'>
+    <joint name="RightSensorPlate" type="fixed">
       <parent>FrontalRightWrist_link</parent>
       <child>RightSensorPlate_link</child>
       <pose>0 0 0 0 3.141593 0</pose>
@@ -335,11 +335,11 @@
       </sensor>
     </joint>
 
-    <plugin name='gzyarp::ControlBoard' filename='gz-sim-yarp-controlboard-system'>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://teo/conf/gazebo_teo_rightArm.ini</yarpConfigurationFile>
     </plugin>
 
-    <plugin name='gzyarp::ForceTorque' filename='gz-sim-yarp-forcetorque-system'>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
       <yarpConfigurationFile>model://teo/conf/gazebo_teo_rightArm_ft.ini</yarpConfigurationFile>
     </plugin>
 

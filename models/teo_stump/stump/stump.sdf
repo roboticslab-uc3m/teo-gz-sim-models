@@ -1,7 +1,7 @@
-<?xml version='1.0'?>
-<sdf version='1.6'>
-  <model name='TEO_stump'>
-    <link name='Stump_link'>
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="TEO_stump">
+    <link name="Stump_link">
       <pose>0 0 0 -1.5708 0 0</pose>
       <inertial>
         <pose>-0.0000 -0.0000 -0.0 0 -0 0</pose>
@@ -15,7 +15,7 @@
           <izz>0.000882489</izz>
         </inertia>
       </inertial>
-      <visual name='Stump_visual'>
+      <visual name="Stump_visual">
         <pose>-0.025 -0.0 -0.07 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -28,7 +28,7 @@
           <specular>0.633726 0.655686 0.746667 1</specular>
         </material>
       </visual>
-      <collision name='Stump_collision'>
+      <collision name="Stump_collision">
         <pose>-0.025 -0.0 -0.075 0 -0 0</pose>
         <geometry>
           <mesh>

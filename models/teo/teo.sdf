@@ -1,81 +1,81 @@
-<?xml version='1.0'?>
-<sdf version='1.7'>
-  <model name='TEO'>
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="TEO">
 
     <pose>0 0 0.845 0 -0 0</pose>
 
-    <include merge='true'>
+    <include merge="true">
       <uri>teo/root.sdf</uri>
     </include>
 
-    <joint name='AxialTrunk_adapter' type='fixed'>
+    <joint name="AxialTrunk_adapter" type="fixed">
       <parent>RootWaist_links</parent>
       <child>AxialTrunk_link_adapter</child>
     </joint>
 
     <!-- TRUNK -->
 
-    <include merge='true'>
+    <include merge="true">
       <pose>0 0 0.1932 0 -0 0</pose>
       <uri>teo/trunk.sdf</uri>
     </include>
 
     <!-- HEAD -->
 
-    <include merge='true'>
+    <include merge="true">
       <pose>0 0 0.6282 0 -0 0</pose>
       <uri>teo/head.sdf</uri>
     </include>
 
-    <joint name='AxialNeck_adapter' type='fixed'>
+    <joint name="AxialNeck_adapter" type="fixed">
       <parent>FrontalTrunk_link</parent>
       <child>AxialNeck_link_adapter</child>
     </joint>
 
     <!-- RIGHT ARM -->
 
-    <include merge='true'>
+    <include merge="true">
       <pose>0 -0.26292 0.4982 0 -0 0</pose>
       <uri>teo/rightArm.sdf</uri>
     </include>
 
-    <joint name='FrontalRightShoulder_adapter' type='fixed'>
+    <joint name="FrontalRightShoulder_adapter" type="fixed">
       <parent>FrontalTrunk_link</parent>
       <child>FrontalRightShoulder_link_adapter</child>
     </joint>
 
     <!-- LEFT ARM -->
 
-    <include merge='true'>
+    <include merge="true">
       <pose>0 0.26292 0.4982 0 -0 0</pose>
       <uri>teo/leftArm.sdf</uri>
     </include>
 
-    <joint name='FrontalLeftShoulder_adapter' type='fixed'>
+    <joint name="FrontalLeftShoulder_adapter" type="fixed">
       <parent>FrontalTrunk_link</parent>
       <child>FrontalLeftShoulder_link_adapter</child>
     </joint>
 
     <!-- RIGHT LEG -->
 
-    <include merge='true'>
+    <include merge="true">
       <pose>0 -0.146 0 0 -0 0</pose>
       <uri>teo/rightLeg.sdf</uri>
     </include>
 
-    <joint name='AxialRightHip_adapter' type='fixed'>
+    <joint name="AxialRightHip_adapter" type="fixed">
       <parent>RootWaist_links</parent>
       <child>AxialRightHip_link_adapter</child>
     </joint>
 
     <!-- LEFT LEG -->
 
-    <include merge='true'>
+    <include merge="true">
       <pose>0 0.146 0 0 -0 0</pose>
       <uri>teo/leftLeg.sdf</uri>
     </include>
 
-    <joint name='AxialLeftHip_adapter' type='fixed'>
+    <joint name="AxialLeftHip_adapter" type="fixed">
       <parent>RootWaist_links</parent>
       <child>AxialLeftHip_link_adapter</child>
     </joint>
@@ -86,11 +86,11 @@
     <plugin name="gz::sim::systems::ForceTorque" filename="gz-sim-forcetorque-system" />
     <plugin name="gz::sim::systems::Imu" filename="gz-sim-imu-system" />
 
-    <plugin name='gzyarp::RobotInterface' filename='gz-sim-yarp-robotinterface-system'>
+    <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
       <yarpRobotInterfaceConfigurationFile>model://teo/conf/teo_nws_yarp.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
 
-    <plugin name='gzyarp::RobotInterface' filename='gz-sim-yarp-robotinterface-system'>
+    <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
       <yarpRobotInterfaceConfigurationFile>model://teo/conf/teo_nws_ros2.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
 

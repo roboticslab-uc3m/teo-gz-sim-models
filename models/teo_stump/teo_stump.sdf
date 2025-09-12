@@ -1,6 +1,6 @@
-<?xml version='1.0'?>
-<sdf version='1.6'>
-  <model name='TEO_stump'>
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="TEO_stump">
 
     <include>
       <uri>model://teo</uri>
@@ -12,7 +12,7 @@
       <uri>model://teo_stump/stump</uri>
     </include>
 
-    <joint name='RightStump' type='fixed'>
+    <joint name="RightStump" type="fixed">
       <parent>TEO::TEO_rightArm::RightSensorPlate_link</parent>
       <child>TEO_rightStump::Stump_link</child>
     </joint>
@@ -23,7 +23,7 @@
       <uri>model://teo_stump/stump</uri>
     </include>
 
-    <joint name='LeftStump' type='fixed'>
+    <joint name="LeftStump" type="fixed">
       <parent>TEO::TEO_leftArm::LeftSensorPlate_link</parent>
       <child>TEO_leftStump::Stump_link</child>
     </joint>

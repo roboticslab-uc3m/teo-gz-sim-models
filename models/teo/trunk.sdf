@@ -1,10 +1,10 @@
-<?xml version='1.0'?>
-<sdf version='1.7'>
-  <model name='TEO'>
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="TEO">
 
-    <link name='AxialTrunk_link_adapter'/>
+    <link name="AxialTrunk_link_adapter"/>
 
-    <link name='AxialTrunk_link'>
+    <link name="AxialTrunk_link">
       <pose>0 0 0 0 -0 0</pose>
       <inertial>
         <pose>-0.002235 -0.000979 -0.018814 0 -0 0</pose>
@@ -18,7 +18,7 @@
           <izz>0.001471749</izz>
         </inertia>
       </inertial>
-      <visual name='AxialTrunk_visual'>
+      <visual name="AxialTrunk_visual">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/visual/AxialWaist.dae</uri>
@@ -30,7 +30,7 @@
           <specular>0.633726 0.655686 0.746667 1</specular>
         </material>
       </visual>
-      <collision name='AxialTrunk_collision'>
+      <collision name="AxialTrunk_collision">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/collision/AxialWaist.stl</uri>
@@ -39,7 +39,7 @@
       </collision>
     </link>
 
-    <joint name='AxialTrunk' type='revolute'>
+    <joint name="AxialTrunk" type="revolute">
       <parent>AxialTrunk_link_adapter</parent>
       <child>AxialTrunk_link</child>
       <axis>
@@ -55,7 +55,7 @@
       </axis>
     </joint>
 
-    <link name='FrontalTrunk_link'>
+    <link name="FrontalTrunk_link">
       <pose>0 0 0 0 -0 0</pose>
       <inertial>
         <pose>0.032985 -0.007876 0.220667 0 -0 0</pose>
@@ -69,7 +69,7 @@
           <izz>0.263359225</izz>
         </inertia>
       </inertial>
-      <visual name='FrontalTrunk_visual'>
+      <visual name="FrontalTrunk_visual">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/visual/RootWaist.dae</uri>
@@ -81,21 +81,21 @@
           <specular>0.452941 0 0.086275 1</specular>
         </material>
       </visual>
-      <collision name='FrontalTrunk_collision'>
+      <collision name="FrontalTrunk_collision">
         <geometry>
           <mesh>
             <uri>model://teo/meshes/collision/RootWaist.stl</uri>
           </mesh>
         </geometry>
       </collision>
-      <sensor name='waist_imu' type='imu'>
+      <sensor name="waist_imu" type="imu">
         <pose>0 0 0.05 0 3.14159 0</pose>
         <always_on>true</always_on>
         <update_rate>200</update_rate>
       </sensor>
     </link>
 
-    <joint name='FrontalTrunk' type='revolute'>
+    <joint name="FrontalTrunk" type="revolute">
       <parent>AxialTrunk_link</parent>
       <child>FrontalTrunk_link</child>
       <axis>
@@ -111,11 +111,11 @@
       </axis>
     </joint>
 
-    <plugin name='gzyarp::ControlBoard' filename='gz-sim-yarp-controlboard-system'>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://teo/conf/gazebo_teo_trunk.ini</yarpConfigurationFile>
     </plugin>
 
-    <plugin name='gzyarp::Imu' filename='gz-sim-yarp-imu-system'>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
       <yarpConfigurationFile>model://teo/conf/gazebo_teo_imu.ini</yarpConfigurationFile>
     </plugin>
 

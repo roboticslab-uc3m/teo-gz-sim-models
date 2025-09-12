@@ -1,6 +1,6 @@
-<?xml version='1.0'?>
-<sdf version='1.6'>
-  <model name='TEO_lacqueyFetch'>
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="TEO_lacqueyFetch">
 
     <include>
       <uri>model://teo</uri>
@@ -11,7 +11,7 @@
       <uri>model://teo_lacqueyFetch/rightLacqueyFetch</uri>
     </include>
 
-    <joint name='RightWrist' type='fixed'>
+    <joint name="RightWrist" type="fixed">
       <parent>TEO::TEO_rightArm::RightSensorPlate_link</parent>
       <child>TEO_rightLacqueyFetch::RightWrist_link</child>
     </joint>
@@ -21,12 +21,12 @@
       <uri>model://teo_lacqueyFetch/leftLacqueyFetch</uri>
     </include>
 
-    <joint name='LeftWrist' type='fixed'>
+    <joint name="LeftWrist" type="fixed">
       <parent>TEO::TEO_leftArm::LeftSensorPlate_link</parent>
       <child>TEO_leftLacqueyFetch::LeftWrist_link</child>
     </joint>
 
-    <plugin name='robotinterface_teo_lacqueyFetch' filename='libgazebo_yarp_robotinterface.so'>
+    <plugin name="robotinterface_teo_lacqueyFetch" filename="libgazebo_yarp_robotinterface.so">
       <yarpRobotInterfaceConfigurationFile>model://teo_lacqueyFetch/conf/teo_lacqueyFetch_nws.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
 
