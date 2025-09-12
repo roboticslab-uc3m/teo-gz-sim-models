@@ -118,8 +118,8 @@
     </link>
 
     <joint name="LeftThumbProximal" type="revolute">
-      <parent>TEO_leftLacqueyFetch::LeftWrist_link</parent>
-      <child>TEO_leftLacqueyFetch::LeftThumbProximal_link</child>
+      <parent>LeftWrist_link</parent>
+      <child>LeftThumbProximal_link</child>
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
@@ -191,8 +191,8 @@
       </collision>
     </link>
     <joint name="LeftThumbDistal" type="revolute">
-      <parent>TEO_leftLacqueyFetch::LeftThumbProximal_link</parent>
-      <child>TEO_leftLacqueyFetch::LeftThumbDistal_link</child>
+      <parent>LeftThumbProximal_link</parent>
+      <child>LeftThumbDistal_link</child>
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
@@ -265,8 +265,8 @@
     </link>
 
     <joint name="ExternalLeftFingerProximal" type="revolute">
-      <parent>TEO_leftLacqueyFetch::LeftWrist_link</parent>
-      <child>TEO_leftLacqueyFetch::ExternalLeftFingerProximal_link</child>
+      <parent>LeftWrist_link</parent>
+      <child>ExternalLeftFingerProximal_link</child>
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
@@ -338,8 +338,8 @@
       </collision>
     </link>
     <joint name="ExternalLeftFingerDistal" type="revolute">
-      <parent>TEO_leftLacqueyFetch::ExternalLeftFingerProximal_link</parent>
-      <child>TEO_leftLacqueyFetch::ExternalLeftFingerDistal_link</child>
+      <parent>ExternalLeftFingerProximal_link</parent>
+      <child>ExternalLeftFingerDistal_link</child>
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
@@ -412,8 +412,8 @@
     </link>
 
     <joint name="InternalLeftFingerProximal" type="revolute">
-      <parent>TEO_leftLacqueyFetch::LeftWrist_link</parent>
-      <child>TEO_leftLacqueyFetch::InternalLeftFingerProximal_link</child>
+      <parent>LeftWrist_link</parent>
+      <child>InternalLeftFingerProximal_link</child>
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
@@ -485,8 +485,8 @@
       </collision>
     </link>
     <joint name="InternalLeftFingerDistal" type="revolute">
-      <parent>TEO_leftLacqueyFetch::InternalLeftFingerProximal_link</parent>
-      <child>TEO_leftLacqueyFetch::InternalLeftFingerDistal_link</child>
+      <parent>InternalLeftFingerProximal_link</parent>
+      <child>InternalLeftFingerDistal_link</child>
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
@@ -500,15 +500,15 @@
       </axis>
     </joint>
 
-    <plugin name="controlboard_leftLacqueyFetch_thumb" filename="libgazebo_yarp_controlboard.so">
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://teo_lacqueyFetch/conf/gazebo_teo_leftLacqueyFetch_thumb.ini</yarpConfigurationFile>
     </plugin>
 
-    <plugin name="controlboard_leftLacqueyFetch_externalFinger" filename="libgazebo_yarp_controlboard.so">
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://teo_lacqueyFetch/conf/gazebo_teo_leftLacqueyFetch_externalFinger.ini</yarpConfigurationFile>
     </plugin>
 
-    <plugin name="controlboard_leftLacqueyFetch_internalFinger" filename="libgazebo_yarp_controlboard.so">
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://teo_lacqueyFetch/conf/gazebo_teo_leftLacqueyFetch_internalFinger.ini</yarpConfigurationFile>
     </plugin>
 

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <world name="default">
+
+    <light name="directional_light" type="directional">
+      <direction>-1 0 0</direction>
+      <pose>1 0 0 0 0 0</pose>
+    </light>
+
+    <include>
+      <pose>0 0 0.05 0 -0 0</pose>
+      <uri>model://teo_lacqueyFetch_fixed</uri>
+    </include>
+
+  </world>
+</sdf>
