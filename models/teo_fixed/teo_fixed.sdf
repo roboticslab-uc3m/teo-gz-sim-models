@@ -2,13 +2,13 @@
 <sdf version="1.7">
   <model name="TEO_fixed">
 
-    <include>
+    <include merge="true">
       <uri>model://teo</uri>
     </include>
 
     <joint name="fixed_to_ground" type="fixed">
       <parent>world</parent>
-      <child>TEO::RootWaist_links</child>
+      <child>RootWaist_links</child>
     </joint>
 
   </model>
