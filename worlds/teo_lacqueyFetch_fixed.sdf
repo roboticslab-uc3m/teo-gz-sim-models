@@ -3,7 +3,7 @@
   <world name="default">
 
     <include>
-      <uri>misc/sun.sdf</uri>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
     </include>
 
     <include>
