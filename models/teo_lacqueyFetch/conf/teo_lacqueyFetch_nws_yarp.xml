@@ -51,5 +51,12 @@
             </action>
             <action phase="shutdown" level="5" type="detach" />
         </device>
+        <device name="lacqueyFetch_robotDescription_nws" type="robotDescription_nws_yarp">
+            <param name="local">${portprefix}/lacqueyFetch/devices/rpc</param>
+            <action phase="startup" level="5" type="attach">
+                <param name="device">yriDescriptionStorage</param>
+            </action>
+            <action phase="shutdown" level="5" type="detach" />
+        </device>
     </devices>
 </robot>
