@@ -7,24 +7,24 @@ Installation instructions for installing from source can be found [here](doc/teo
 
 ## Usage
 
-We recomment to add this line at the end of your `~/.bashrc` (Linux) so that Gazebo can discover and load the models, worlds and plugins with no further input from terminal (using standard installation path):
+We recommend to add these lines at the end of your `~/.bashrc` (Linux) so that Gazebo can discover our models and worlds, as well as YARP plugins, with no further input from terminal (using the standard installation path):
 
 ```bash
-export GZ_SIM_RESOURCE_PATH=/usr/local/share/gz-sim/models:${GZ_SIM_RESOURCE_PATH}
-export GZ_SIM_RESOURCE_PATH=/usr/local/share/gz-sim/worlds:${GZ_SIM_RESOURCE_PATH}
+export GZ_SIM_RESOURCE_PATH=/usr/local/share/teo-gz-sim-models/models:${GZ_SIM_RESOURCE_PATH}
+export GZ_SIM_RESOURCE_PATH=/usr/local/share/teo-gz-sim-models/worlds:${GZ_SIM_RESOURCE_PATH}
 export GZ_SIM_SYSTEM_PLUGIN_PATH=/usr/local/lib:${GZ_SIM_SYSTEM_PLUGIN_PATH}
 ```
 
 Launch the robot standing on its own feet:
 
 ```
-gazebo path/to/worlds/teo.world
+gz sim teo.sdf
 ```
 
 Launch the robot floating slightly above ground with fixed root links:
 
 ```
-gazebo path/to/worlds/teo_fixed.world
+gz sim teo_fixed.sdf
 ```
 
 ## Contributing
