@@ -7,7 +7,7 @@
             <param name="name">${portprefix}/leftHand</param>
             <param name="period">0.01</param>
             <action phase="startup" level="5" type="attach">
-                <param name="device">controlboard_leftHand</param>
+                <param name="device">controlBoard_leftHand</param>
             </action>
             <action phase="shutdown" level="5" type="detach" />
         </device>
@@ -15,7 +15,7 @@
             <param name="name">${portprefix}/rightHand</param>
             <param name="period">0.01</param>
             <action phase="startup" level="5" type="attach">
-                <param name="device">controlboard_rightHand</param>
+                <param name="device">controlBoard_rightHand</param>
             </action>
             <action phase="shutdown" level="5" type="detach" />
         </device>

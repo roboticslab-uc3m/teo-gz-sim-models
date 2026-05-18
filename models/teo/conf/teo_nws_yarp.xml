@@ -7,7 +7,7 @@
             <param name="name">${portprefix}/head</param>
             <param name="period">0.01</param>
             <action phase="startup" level="5" type="attach">
-                <param name="device">controlboard_head</param>
+                <param name="device">controlBoard_head</param>
             </action>
             <action phase="shutdown" level="5" type="detach" />
         </device>
@@ -15,7 +15,7 @@
             <param name="name">${portprefix}/leftArm</param>
             <param name="period">0.01</param>
             <action phase="startup" level="5" type="attach">
-                <param name="device">controlboard_leftArm</param>
+                <param name="device">controlBoard_leftArm</param>
             </action>
             <action phase="shutdown" level="5" type="detach" />
         </device>
@@ -23,7 +23,7 @@
             <param name="name">${portprefix}/rightArm</param>
             <param name="period">0.01</param>
             <action phase="startup" level="5" type="attach">
-                <param name="device">controlboard_rightArm</param>
+                <param name="device">controlBoard_rightArm</param>
             </action>
             <action phase="shutdown" level="5" type="detach" />
         </device>
@@ -31,7 +31,7 @@
             <param name="name">${portprefix}/trunk</param>
             <param name="period">0.01</param>
             <action phase="startup" level="5" type="attach">
-                <param name="device">controlboard_trunk</param>
+                <param name="device">controlBoard_trunk</param>
             </action>
             <action phase="shutdown" level="5" type="detach" />
         </device>
@@ -39,7 +39,7 @@
             <param name="name">${portprefix}/leftLeg</param>
             <param name="period">0.01</param>
             <action phase="startup" level="5" type="attach">
-                <param name="device">controlboard_leftLeg</param>
+                <param name="device">controlBoard_leftLeg</param>
             </action>
             <action phase="shutdown" level="5" type="detach" />
         </device>
@@ -47,7 +47,7 @@
             <param name="name">${portprefix}/rightLeg</param>
             <param name="period">0.01</param>
             <action phase="startup" level="5" type="attach">
-                <param name="device">controlboard_rightLeg</param>
+                <param name="device">controlBoard_rightLeg</param>
             </action>
             <action phase="shutdown" level="5" type="detach" />
         </device>
