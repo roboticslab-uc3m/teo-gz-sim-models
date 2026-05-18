@@ -30,5 +30,9 @@
       <yarpRobotInterfaceConfigurationFile>model://teo_lacqueyFetch/conf/teo_lacqueyFetch_nws_yarp.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
 
+    <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
+      <yarpRobotInterfaceConfigurationFile>model://teo_lacqueyFetch/conf/teo_lacqueyFetch_nws_ros2.xml</yarpRobotInterfaceConfigurationFile>
+    </plugin>
+
   </model>
 </sdf>

@@ -501,15 +501,7 @@
     </joint>
 
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-      <yarpConfigurationFile>model://teo_lacqueyFetch/conf/gazebo_teo_rightLacqueyFetch_thumb.ini</yarpConfigurationFile>
-    </plugin>
-
-    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-      <yarpConfigurationFile>model://teo_lacqueyFetch/conf/gazebo_teo_rightLacqueyFetch_externalFinger.ini</yarpConfigurationFile>
-    </plugin>
-
-    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-      <yarpConfigurationFile>model://teo_lacqueyFetch/conf/gazebo_teo_rightLacqueyFetch_internalFinger.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://teo_lacqueyFetch/conf/gazebo_teo_rightHand.ini</yarpConfigurationFile>
     </plugin>
 
   </model>
